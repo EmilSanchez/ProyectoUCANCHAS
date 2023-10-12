@@ -2,6 +2,7 @@ from os import system;system("cls")
 import inicio
 promocion=[["Lunes con 15% de descuento","Lunes",0.15,],["Domingo con 20% de descuento","Domingo",0.2],["Viernes con 10% de descuento","Viernes",0.1]]
 
+#para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
 
@@ -26,7 +27,7 @@ def menu_administrador(promo):
                 print("")
                 print(RED,"UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
                 print(WHITE,"")
-                input("Press Enter.. --> ")
+                input("Presione Enter.. --> ")
                 system ("cls")
                 continue
         

@@ -61,7 +61,6 @@ def menuhoras(datos,promo):
             canchas(datos,promo)
 
 def canchas(datos,promo):
-    reservadia=[]
     #Realizar la reserva
     while True:
 
