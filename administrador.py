@@ -47,8 +47,7 @@ def menu_administrador(promo):
         elif opcion == 7:
             print("")
             print("Gracias por visitarnos!"); print("")
-            break
-
+            return promo
 def promociones(promo):
     print("1). Activar promocion")
     print("2). Desactivar promociones")

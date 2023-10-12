@@ -12,11 +12,12 @@ horaabierto=["8:00 a.m. a 9:00 a.m.","9:00 a.m. a 10:00 a.m.","10:00 a.m. a 11:0
 
 cancha=[[1,2,3,4,5],["001","002","003","004","005"]]
 
-def menudias(promo):
+def menudias(datos):
     
     while(True):
         #Menu  dias:
-        
+        promo=datos.pop(2)
+
         if promo!=0:
             print(f"\n\t{promo[0]}")
         print("\n\tDIAS")
@@ -24,34 +25,29 @@ def menudias(promo):
             print(f"{i+1}.{dias[i]}")
         opc=int(input("Ingrese el dia de reserva -> "))
         dia=dias[opc-1]
-        
+        datos.append(dia)#Agregar el dia 
+
         if opc==1:
-            menuhoras(dia,promo)
-            break
+            menuhoras(datos,promo)
         elif opc==2:
-            menuhoras(dia,promo)
-            break
+            menuhoras(datos,promo)
         elif opc==3:
-            menuhoras(dia,promo)
-            break
+            menuhoras(datos,promo)
         elif opc==4:
-            menuhoras(dia,promo)
-            break
+            menuhoras(datos,promo)
         elif opc==5:
-            menuhoras(dia,promo)
+            menuhoras(datos,promo)
             break
         elif opc==6:
-            menuhoras(dia,promo)
-            break
+            menuhoras(datos,promo)
         elif opc==7:
-            menuhoras(dia,promo)
-            break
+            menuhoras(datos,promo)
         else:
             print("Ha ingresado un día inexistente")
 
 
             
-def menuhoras(dia,promo):
+def menuhoras(datos,promo):
     #Validar horas
     while True:
         print("\nHoras:")
@@ -60,38 +56,38 @@ def menuhoras(dia,promo):
         horapedida=int(input("Ingrese la hora -> "))
         
         if horapedida <= 9 and horapedida >= 0:
-            hora = horaabierto[horapedida-1] 
-            canchas(hora,dia,promo)
+            hora = horaabierto[horapedida-1]
+            datos.append(hora)#agregar la hora
+            canchas(datos,promo)
 
-def canchas(hora,dia,promo):
+def canchas(datos,promo):
     reservadia=[]
     #Realizar la reserva
     while True:
+
         print("\nOPCIONES DE CANCHA")
         for i in cancha[0]:
             print(f"Cancha {i}")
-        can=int(input("Ingrese la cancha a apartar -> "))
-        if can in cancha[0]:
-            nombre=input("Ingrese el nombre->")
+        tipo_cancha=int(input("Ingrese la cancha a apartar -> "))
+
+        if tipo_cancha in cancha[0]:
             #validar promocion
-            if promo!=0  and promo[1]==dia:
+            if promo!=0  and promo[1]==datos[2]:
                 valor=20000-(20000*promo[2])
             else:
                 valor=20000
 
-            reservadia.append(nombre)
-            reservadia.append(dia)
-            reservadia.append(hora)
-            reservadia.append(can)
-            reservadia.append(valor) #valor de la cancha
+            datos.append(tipo_cancha)#ingresar la cancha
+            datos.append(valor) #valor de la cancha
+
             rta=input("Desea apartar arbitro? (si/no) -> ")
             if rta=="si":
                 arbitro=random.choice(cancha[1])
-                reservadia.append(arbitro)
+                datos.append(arbitro)
             elif rta=="no":
-                reservadia.append(0)
+                datos.append(0)
                 
-            reserva.append(reservadia)
+            reserva.append(datos)
             print(reserva)
 
 

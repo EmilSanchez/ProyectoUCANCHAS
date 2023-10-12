@@ -4,6 +4,7 @@ import reservasclientes
 import administrador
 #todos[[nombre , cedula, cuenta , contraseña]]
 todos = [["Didier","10657","didier55","d563"],["Luisa","1065","luisa23","13"]]
+
 def cuentas(rta):#Validar cuentas
     cuenta=[]
     if rta == "no":   
@@ -75,7 +76,7 @@ def roles(promo):#validar usuario
         return promo
     
 def programa():
-    promo = 0
+    promo=0
     while (True):
         promocion=promo
         print(""" 
@@ -97,7 +98,6 @@ def programa():
                 print("No se existe esta")
         except:
             print("\nIngrese el numero de la opcion elegida")
-            
+
 if __name__=="__main__":
     programa()
-            
