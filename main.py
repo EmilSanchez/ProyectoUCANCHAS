@@ -16,73 +16,50 @@ horaabierto=["8:00 a.m.","9:00 a.m.","10:00 a.m.","11:00 a.m.","3:00 p.m.","4:00
 
 todos=[["Didier","55"],["Luisa","55"],["Emil", "15"]]
 
-
-
 def cuentas():
-    while(True):
-        print("""   
-                1.Administrador
-                2.Responsable
-                3.Clientes.
-                """)
-        opc=int(input("Ingrese una opción para ingreso -> "))
-        if opc==1:        
-            cuentas(rta="si")
-        elif opc==2:
-            cuentas(rta="si")
-        elif opc==3:
-            rta=input("Tiene cuenta de usuario (s/n)-> ").lower()
-            if rta=="s":
-                cuentas(rta)
-                
-            elif rta=="n":
-                cuentas(rta)
-            menudias()
-        else:
-            print("Ha ingresado un rol invalido")
-        break
     cuenta=[]
-    if rta=="n":   
-        print("REGISTRAR CUENTA")
-        nombre=input("Ingrese nombre->")
-        identificacion=input("Ingrese cedula->")
-        if identificacion in todos[1]:
-            print("Ya tienes cuenta")
-        else:
-            usuario=input("registre el nombre de usuario o identificacion->")
-            contraseña=input("Registre la contraseña->")
-            cuenta.append(identificacion)
-            cuenta.append(usuario)
-            cuenta.append(contraseña)
-            todos.append(cuenta)    
-        print(todos)
-
-    if rta=="si":
-        usuario=input("Ingrese el nombre de usuario->")
-        contraseña=input("Ingrese la contraseña->")
-        for i in todos:
-            if usuario and contraseña in i:
-                print("Bienvenido")
-
-def roles():
     while(True):
-        print("""   
-                1.Administrador
-                2.Responsable
-                3.Clientes.
-                """)
-        opc=int(input("Ingrese una opción para ingreso->"))
-        if opc==1:        
-            cuentas(rta="si")
-        elif opc==2:
-            cuentas(rta="si")
-        elif opc==3:
-            rta=input("Tiene cuenta de usuario->").lower()
-            if rta=="si":
-                cuentas(rta)
-                
-            elif rta=="no":
-                cuentas(rta)
+        print("")
+        print("BIENVENID@S");print("")
+        print("1. Administrador")
+        print("2. Responsable" )
+        print("3. Clientes "); print("")
+        opc=int(input("Ingrese una opción para ingreso -> "))
+        
+        if opc == 1 or opc == 2:
+            
+            usuario=input("Ingrese el nombre de usuario -> ")
+            contraseña=input("Ingrese la contraseña -> ")
+            for i in todos:
+                if usuario and contraseña in i:
+                    print(f"Bienvenido {usuario}")
+                    
+        elif opc == 3:
+            
+            rta = input("Tiene cuenta de usuario (s/n)-> ").lower()
+            
+            if rta == 's':
+                usuario=input("Ingrese el nombre de usuario->")
+                contraseña=input("Ingrese la contraseña->")
+                for i in todos:
+                    if usuario and contraseña in i:
+                        print(f"Bienvenido {usuario}")
+                                   
+            elif rta == "n":
+                print("REGISTRAR CUENTA")
+                nombre=input("Ingrese nombre->")
+                identificacion=input("Ingrese cedula->")
+                if identificacion in todos[1]:
+                    print("Ya tienes cuenta")
+                    
+                else:
+                    usuario=input("registre el nombre de usuario o identificacion->")
+                    contraseña=input("Registre la contraseña->")
+                    cuenta.append(identificacion)
+                    cuenta.append(usuario)
+                    cuenta.append(contraseña)
+                    todos.append(cuenta)    
+                print(todos)
             menudias()
         else:
             print("Ha ingresado un rol invalido")
@@ -191,7 +168,7 @@ def menu():
             menuhoras()
             canchas()
         elif opcion == 4:
-            pass
+            canchas()
         elif opcion == 5:
             pass
         elif opcion == 6:
