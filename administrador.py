@@ -1,74 +1,84 @@
 from os import system;system("cls")
-import inicio
-promocion=[["Lunes con 15% de descuento","Lunes",0.15,],["Domingo con 20% de descuento","Domingo",0.2],["Viernes con 10% de descuento","Viernes",0.1]]
+import control_usuario
+import control_clientes
+import control_reservas
+import control_arbitros
+import control_promocion
+import control_reportes
 
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
 
-def menu_administrador(promo):
+user = "didier"
+password= "2023"
+
+def validar_admin():
+    
+    print("\nBIENVENIDO  ADMINISTRADOR"); print("")
     while True:
-        while True:
-            print("=" * 44)
-            print("| ADMINISTRACION DE CANCHAS DEPORTIVAS SAS |"); print("=" * 44)
-            print("|    1.  --   GESTION DE USUARIOS          |")
-            print("|    2.  --   GESTION DE CLIENTES          |")
-            print("|    3.  --   GESTION DE RESERVAS          |")
-            print("|    4.  --   GESTION DE ARBITROS          |")
-            print("|    5.  --   GESTION DE PROMOCIONES       |")
-            print("|    6.  --   GESTION DE REPORTES          |")
-            print("|    7.  --   SALIR                        |"); print("=" * 44); print("")
-            
-            try:
-                opcion = int(input("Ingrese la opcion a ejecutar --> "))
+        userv = input("Ingrese el nombre de usuario --> ")
+        passv = input("Ingrese la contraseña --> ")
+        if userv == user:
+            if password == passv:
+                menu_administrador()
                 break
-                
-            except:
-                print("")
-                print(RED,"UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
+            else:
+                print(RED,"")
+                print("La contraseña es incorrecta...")
                 print(WHITE,"")
-                input("Presione Enter.. --> ")
-                system ("cls")
-                continue
+                input("Presione Enter para intentarlo nuevamente.. --> ")
+                system("cls")
+                continue                
+        else:
+            print(RED,"")
+            print("El nombre de usuario es incorrecto...")
+            print(WHITE,"")
+            input("Presione Enter para intentarlo nuevamente.. --> ")
+            system("cls")
+            continue
+
+def menu_administrador():
+    while True: 
+        print("=" * 44)
+        print("| ADMINISTRACION DE CANCHAS DEPORTIVAS SAS |")
+        print("=" * 44)
+        print("|    1.  --   CONTROL DE USUARIOS          |")
+        print("|    2.  --   CONTROL DE CLIENTES          |")
+        print("|    3.  --   CONTROL DE RESERVAS          |")
+        print("|    4.  --   CONTROL DE ARBITROS          |")
+        print("|    5.  --   CONTROL DE PROMOCIONES       |")
+        print("|    6.  --   CONTROL DE REPORTES          |")
+        print("|    7.  --   SALIR                        |")
+        print("=" * 44); print("")
+            
+        try:
+            opcion = int(input("Ingrese la opcion a ejecutar --> "))         
+        except:
+            print(RED,"")
+            print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
+            print(WHITE,"")
+            input("Presione Enter.. --> ")
+            system("cls")
+            continue    
         
         if opcion == 1:
-            inicio.cuentas()
+            pass
         elif opcion == 2:
             pass
         elif opcion == 3:
-            inicio.menudias()
-            inicio.menuhoras()
-            inicio.canchas()
+            pass 
         elif opcion == 4:
-            inicio.canchas()
+            pass
         elif opcion == 5:
-            promociones(promo)
+            control_promocion.menu_promociones()
         elif opcion == 6:
             pass
         elif opcion == 7:
-            print("")
-            print("Gracias por visitarnos!"); print("")
-            return promo
-def promociones(promo):
-    print("1). Activar promocion")
-    print("2). Desactivar promociones")
-    print("3). Salir")
+            print("\nGracias por visitarnos!")
+            return 
+        else:
+            print("\nIngrese una opción valida")
     
-    opc=int(input("Ingrese una opcion->"))
-    
-    if opc==1:
-        for i in range(len(promocion)):
-            print(f"{i+1}).{promocion[i][0]}")
-        opc=int(input("Ingrese una promocion->"))
-        promo=promocion[opc-1]
-        print (promo)
-        return promo
-    elif opc==2:
-        if promo!=0:
-            promo=0
-            return promo
-    elif opc == 3:
-        print("Regresando al manu principal...")
-        
-        
 
+validar_admin()
