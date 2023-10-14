@@ -1,6 +1,10 @@
 from os import system;system("cls")
+<<<<<<< HEAD
 import inicio
 import control_arbitros
+=======
+import random
+>>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
 
 reserva=[]
 

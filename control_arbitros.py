@@ -9,6 +9,7 @@ RED = '\033[31m'
 WHITE = '\033[37m'
 
 
+<<<<<<< HEAD
 def menu_arbitros():
         print("=" * 44)
         print("|          CONTROL DE ARBITROS             |")
@@ -31,12 +32,31 @@ def arbitros():
             
             opcion = int(input("Ingrese la opcion a ejecutar --> "))  
             
+=======
+
+def menu_arbitro():
+    while True: 
+        system("cls")
+        print("=" * 49)
+        print("|   CONTROL DE USUARIO DE CANCHAS DEPORTIVAS SAS |")
+        print("=" * 49)
+        print("|    1.  --   REGISTRAR ARBITRO                 |")
+        print("|    2.  --   ELIMINAR ARBITRO                  |")
+        print("|    3.  --   ACTUALIZAR ARBITRO                |")
+        print("|    4.  --   ACTIVAR ARBITRO                   |")
+        print("|    5.  --   SALIR                             |")
+        print("=" * 49); print("")
+            
+        try:
+            opcion = int(input("Ingrese la opcion a ejecutar --> "))         
+>>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
         except:
             print(RED,"")
             print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
             print(WHITE,"")
             input("Presione Enter.. --> ")
             system("cls")
+<<<<<<< HEAD
             continue
         
         if opcion == 1:
@@ -75,3 +95,22 @@ def arbitros():
             administrador.menu_administrador()
     
         
+=======
+            continue    
+
+        if opcion==1:
+            registrarar_bitro()
+        elif opcion==2:
+
+        elif opcion==3:
+            actualizar_abitro()
+        elif opcion==4:
+            activar_arbitro()
+        elif opcion==5:
+            break
+        else:
+            print("Ingreso de opcion invalida")
+def registrarar_bitro():
+    pass
+
+>>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
