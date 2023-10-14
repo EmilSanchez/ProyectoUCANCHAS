@@ -5,8 +5,8 @@ from datetime import datetime
 RED = '\033[31m'
 WHITE = '\033[37m'
 
-user=0
-password=0
+user = 'emil'
+password = '15'
 def validar_respon():
     print(F"BIENVENIDO  RESPONSABLE")
     while True:

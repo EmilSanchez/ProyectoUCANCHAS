@@ -108,4 +108,3 @@ def activar_promocion():
                 input("Presione Enter.. --> ")
                 system("cls")
 
-menu_promociones()

@@ -5,22 +5,27 @@ import control_reservas
 import control_arbitros
 import control_promocion
 import control_reportes
-
+import reservasclientes
+import time
+import inicio
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
 
 user = "didier"
-password= "2023"
+password = "2023"
 
 def validar_admin():
-    
-    print("\nBIENVENIDO  ADMINISTRADOR"); print("")
+    print("BIENVENIDO  ADMINISTRADOR"); print("")
     while True:
         userv = input("Ingrese el nombre de usuario --> ")
         passv = input("Ingrese la contraseña --> ")
         if userv == user:
             if password == passv:
+                print("")
+                print("Accediendo..")
+                time.sleep(2)
+                system('cls')                
                 menu_administrador()
                 break
             else:
@@ -67,18 +72,21 @@ def menu_administrador():
         elif opcion == 2:
             pass
         elif opcion == 3:
-            pass 
+            reservasclientes.menudias('0') 
         elif opcion == 4:
-            control_arbitros()
+            system('cls')
+            control_arbitros.arbitros()
         elif opcion == 5:
             control_promocion.menu_promociones()
         elif opcion == 6:
             pass
         elif opcion == 7:
-            print("\nGracias por visitarnos!")
-            return 
+            system('cls')
+            print("Regresando al Menu Principal..")
+            time.sleep(2)
+            system('cls')
+            inicio.programa()
         else:
             print("\nIngrese una opción valida")
     
 
-validar_admin()

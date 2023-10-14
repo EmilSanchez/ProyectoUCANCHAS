@@ -1,6 +1,6 @@
 from os import system;system("cls")
 import inicio
-import random
+import control_arbitros
 
 reserva=[]
 
@@ -79,7 +79,7 @@ def canchas(datos,promo):
         if tipo_cancha in cancha[0]:
             
             #validar promocion,dato[2]=Dia
-            if promo!=0  and promo[1]==datos[2]:
+            if promo!=0  and promo[1] == datos[2]:
                 valor=20000-(20000*promo[2])
             else:
                 valor=20000
@@ -89,8 +89,7 @@ def canchas(datos,promo):
             
             rta=input("Desea apartar arbitro? (si/no) -> ")
             if rta=="si":
-                arbitro=random.choice(cancha[1])
-                datos.append(arbitro)
+                control_arbitros.arbitros()
             elif rta=="no":
                 datos.append(0)
 
@@ -98,7 +97,7 @@ def canchas(datos,promo):
             reserva.append(datos)
             print(reserva)
 
-            repetir=input("Desea reservar otro partido? (si/no) -> ").lower()
+            repetir = input("Desea reservar otro partido? (si/no) -> ").lower()
             if repetir == "si":
                 datos.append(promo)
                 menudias(datos)        
