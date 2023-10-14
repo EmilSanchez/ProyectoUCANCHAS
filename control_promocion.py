@@ -55,7 +55,7 @@ def crear_promocion():
         promo.append(numero_porcentaje)
         promociones.append(promo)
 
-        #tiempo
+        #tiempo(mensaje de proceso,mensaje de finalizar )
         Excepciones_time.tiempo("Creando promoción ...","Promoción creada")
         break
 
@@ -78,7 +78,7 @@ def activar_promocion():
                 if opcion<=len(promociones) and opcion>=0:
                     promo_activa=promociones[opcion-1]
                     promociones_activa.append(promo_activa)
-                    print(promociones_activa)
+                    Excepciones_time.tiempo("Activando Promoción ...", "Promoción Activada")
                     break
                 else:
                     Excepciones_time.errores()
