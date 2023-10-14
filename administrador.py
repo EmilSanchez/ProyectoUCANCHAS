@@ -5,26 +5,20 @@ import control_reservas
 import control_arbitros
 import control_promocion
 import control_reportes
-<<<<<<< HEAD
 import reservasclientes
 import time
 import inicio
-=======
 import Excepciones_time
 
 #para la promocion activa
->>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
 
-<<<<<<< HEAD
-user = "didier"
-password = "2023"
-=======
+
 user = "Didier"
 password= "2023"
->>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
+
 
 def validar_admin():
     print("BIENVENIDO  ADMINISTRADOR"); print("")

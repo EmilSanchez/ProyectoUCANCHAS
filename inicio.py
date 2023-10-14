@@ -2,15 +2,15 @@ from os import system
 system("cls")
 import administrador
 import responsable
-<<<<<<< HEAD
+
 import time
 
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
-=======
+
 import Excepciones_time
->>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
+
                     
 def programa():
     #validar usuario

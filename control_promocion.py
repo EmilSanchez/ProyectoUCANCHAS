@@ -86,7 +86,7 @@ def activar_promocion():
                 Excepciones_time.excepciones()
 
 
-<<<<<<< HEAD
-=======
+
+
 menu_promociones()
->>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
+

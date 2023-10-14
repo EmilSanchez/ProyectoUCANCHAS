@@ -9,7 +9,7 @@ RED = '\033[31m'
 WHITE = '\033[37m'
 
 
-<<<<<<< HEAD
+
 def menu_arbitros():
         print("=" * 44)
         print("|          CONTROL DE ARBITROS             |")
@@ -22,18 +22,9 @@ def menu_arbitros():
 
         print("=" * 44);print("")
         
-def arbitros():
-    
-    arbitros = ["Arbtro_001", "Arbtro_002"]
-    
-    while True:
-        try:
-            menu_arbitros()
-            
-            opcion = int(input("Ingrese la opcion a ejecutar --> "))  
-            
-=======
 
+arbitros = ["Arbtro_001", "Arbtro_002"]
+ 
 def menu_arbitro():
     while True: 
         system("cls")
@@ -49,14 +40,14 @@ def menu_arbitro():
             
         try:
             opcion = int(input("Ingrese la opcion a ejecutar --> "))         
->>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
+
         except:
             print(RED,"")
             print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
             print(WHITE,"")
             input("Presione Enter.. --> ")
             system("cls")
-<<<<<<< HEAD
+
             continue
         
         if opcion == 1:
@@ -80,37 +71,20 @@ def menu_arbitro():
             
         elif opcion == 2:
             pass
-
         elif opcion == 3:
             pass
-        
         elif opcion == 4:
             pass
-        
         elif opcion == 5:
             system('cls')
             print("Regresando al Menu Administrador..")
             time.sleep(2)
             system('cls') 
             administrador.menu_administrador()
-    
-        
-=======
             continue    
-
-        if opcion==1:
-            registrarar_bitro()
-        elif opcion==2:
-
-        elif opcion==3:
-            actualizar_abitro()
-        elif opcion==4:
-            activar_arbitro()
-        elif opcion==5:
-            break
         else:
             print("Ingreso de opcion invalida")
-def registrarar_bitro():
+            
+def registrarar_arbitro():
     pass
 
->>>>>>> 56d1f7df4c2a6fddcf178c87a9a4164ee6accd42
