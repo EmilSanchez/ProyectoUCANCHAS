@@ -1,4 +1,5 @@
 from os import system;system("cls")
+from datetime import datetime
 
 #para que de color a las letras
 RED = '\033[31m'
@@ -58,4 +59,3 @@ def menu_responsable():
 
         elif opcion == 4:
             break        
-

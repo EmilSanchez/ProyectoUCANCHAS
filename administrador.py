@@ -69,7 +69,7 @@ def menu_administrador():
         elif opcion == 3:
             pass 
         elif opcion == 4:
-            pass
+            control_arbitros()
         elif opcion == 5:
             control_promocion.menu_promociones()
         elif opcion == 6:
