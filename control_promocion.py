@@ -1,10 +1,12 @@
 from os import system;system("cls")
 import time
+import Excepciones_time
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
-                    
+0               
 promociones=[]
+promociones_activa=[]
 
 def menu_promociones():
     while True:
@@ -19,11 +21,7 @@ def menu_promociones():
         try:
             opcion = int(input("Ingrese la opcion a ejecutar --> "))   
         except:
-            print(RED,"")
-            print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
-            print(WHITE,"")
-            input("Presione Enter.. --> ")
-            system("cls")
+            Excepciones_time.excepciones()
             continue    
 
         if opcion==1:
@@ -33,10 +31,7 @@ def menu_promociones():
         elif opcion==3:
             break
         else:
-            print(RED,"Esa opción no existe, ingrese una valida")
-            print(WHITE,"")
-            input("Presione Enter para intentarlo nuevamente --> ")
-            system("cls")
+            Excepciones_time.errores()
 
 def crear_promocion():
     #creando promocion
@@ -50,62 +45,45 @@ def crear_promocion():
                 if numero_porcentaje>0:
                     break
                 else:
-                    print(RED,"")
-                    print("UPS! DEBE INGRESAR UN ENTERO :)...")
-                    print(WHITE,"")
-                    input("Presione Enter .. --> ")                    
+                    Excepciones_time.errores()
+              
             except:
-                print(RED,"")
-                print("UPS! DEBE INGRESAR UN ENTERO :)...")
-                print(WHITE,"")
-                input("Presione Enter .. --> ")
-                system("cls")
-
+                Excepciones_time.excepciones()
                 continue
 
         promo.append(dia)
         promo.append(numero_porcentaje)
         promociones.append(promo)
 
-        for i in range(2):
-            system("cls")
-            print("Creando promoción...")
-            time.sleep(1)
-            
-        system("cls")
-        print("Promoción creada")
-        input("Presione Enter .. --> ")        
+        #tiempo
+        Excepciones_time.tiempo("Creando promoción ...","Promoción creada")
         break
 
-        #Tiempo de crear
 
 def activar_promocion():
 
     while True:
+        #Verificar existencia de la promocion
         if len(promociones)==0:
             print("No hay ninguna promoción ")
         else:
             contador=1
+            #Mostrar promociones
             for i in promociones:
                 print(f"{contador}. ---  Día {i[0]} descuento de {i[1]} % ")
                 contador+=1
             try:
-                opcion = int(input("Ingrese el descuento a activar --> "))   
+                #Activar la promo
+                opcion = int(input("Ingrese la opcion de descuento a activar --> "))   
+                if opcion<=len(promociones) and opcion>=0:
+                    promo_activa=promociones[opcion-1]
+                    promociones_activa.append(promo_activa)
+                    print(promociones_activa)
+                    break
+                else:
+                    Excepciones_time.errores()
             except:
-                print(RED,"")
-                print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
-                print(WHITE,"")
-                input("Presione Enter.. --> ")
-                system("cls")
+                Excepciones_time.excepciones()
 
-            if opcion<=len(promociones) and opcion>=0:
-                promo_activa=promociones[opcion-1]
-                print(promo_activa)
-            else:
-                print(RED,"")
-                print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
-                print(WHITE,"")
-                input("Presione Enter.. --> ")
-                system("cls")
 
 menu_promociones()

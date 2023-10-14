@@ -5,12 +5,14 @@ import control_reservas
 import control_arbitros
 import control_promocion
 import control_reportes
+import Excepciones_time
 
+#para la promocion activa
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
 
-user = "didier"
+user = "Didier"
 password= "2023"
 
 def validar_admin():
@@ -55,11 +57,7 @@ def menu_administrador():
         try:
             opcion = int(input("Ingrese la opcion a ejecutar --> "))         
         except:
-            print(RED,"")
-            print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
-            print(WHITE,"")
-            input("Presione Enter.. --> ")
-            system("cls")
+            Excepciones_time.excepciones()
             continue    
         
         if opcion == 1:

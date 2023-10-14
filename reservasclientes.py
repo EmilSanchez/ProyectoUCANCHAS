@@ -1,5 +1,4 @@
 from os import system;system("cls")
-import inicio
 import random
 
 reserva=[]

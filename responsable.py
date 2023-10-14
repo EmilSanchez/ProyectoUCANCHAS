@@ -1,6 +1,5 @@
 from os import system;system("cls")
-from datetime import datetime
-
+import Excepciones_time
 #para que de color a las letras
 RED = '\033[31m'
 WHITE = '\033[37m'
@@ -43,11 +42,7 @@ def menu_responsable():
         try:
             opcion = int(input("Ingrese la opcion a ejecutar --> "))         
         except:
-            print(RED,"")
-            print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
-            print(WHITE,"")
-            input("Presione Enter.. --> ")
-            system("cls")
+            Excepciones_time.excepciones()
             continue    
 
         if opcion == 1:
@@ -58,4 +53,6 @@ def menu_responsable():
             pass
 
         elif opcion == 4:
-            break        
+            break 
+        else:
+            Excepciones_time.errores()       

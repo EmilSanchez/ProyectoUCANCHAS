@@ -2,10 +2,7 @@ from os import system
 system("cls")
 import administrador
 import responsable
-
-#para que de color a las letras
-RED = '\033[31m'
-WHITE = '\033[37m'
+import Excepciones_time
                     
 def programa():
     #validar usuario
@@ -22,11 +19,7 @@ def programa():
         try:
             opcion = int(input("Ingrese la opcion a ejecutar --> "))         
         except:
-            print(RED,"")
-            print("UPS! DEBES INGRESAR UN ENTERO POSITIVO :)...")
-            print(WHITE,"")
-            input("Presione Enter.. --> ")
-            system("cls")
+            Excepciones_time.excepciones()
             continue    
 
         if opcion==1:
@@ -35,6 +28,8 @@ def programa():
             responsable.validar_respon()
         elif opcion==3:
             exit()
+        else:
+            Excepciones_time.errores()
 
 
 programa()
